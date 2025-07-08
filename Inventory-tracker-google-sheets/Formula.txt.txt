@@ -1,0 +1,59 @@
+# Inventory Tracker - Key Google Sheets Formulas
+
+1. SUM of Incoming Items:
+=SUMIF('Form'!C:C, "Masuk", 'Form'!D:D)
+
+Description:
+Sums the values in column D (Quantity) from the "Form" sheet where column C (Type) is "Masuk" (Incoming).
+
+---
+
+2. SUM of Outgoing Items:
+=SUMIF('Form'!C:C, "Keluar", 'Form'!D:D)
+
+Description:
+Sums the outgoing quantities from the "Form" sheet where the type is "Keluar" (Outgoing).
+
+---
+
+3. Remaining Stock Calculation:
+=Total In - Total Out
+
+Description:
+Final stock is calculated by subtracting total outgoing from total incoming for each item.
+
+---
+
+4. TODAY Function - Auto Date:
+=TODAY()
+
+Description:
+Displays the current date dynamically.
+
+---
+
+5. Data Validation:
+Applied in the "Form" sheet for the following fields:
+- *Item Type*: Limited to “Masuk” (In) or “Keluar” (Out)
+- *Usage Purpose*: Drop-down list from predefined options
+- *Date*: Standard date format with validation
+
+---
+
+6. Pivot Table:
+The "Pivot" sheet summarizes:
+- Total items in by item type
+- Total items out by item type
+- Current stock per item (as calculated field)
+
+Pivot table is built based on data from the "Form" sheet.
+
+---
+
+7. Filters:
+The "Form" sheet uses filter views to help users search and sort entries by date, item type, or purpose.
+
+---
+
+Note:
+All formulas are used to power a lightweight inventory tracking system using Google Sheets, designed for easy tracking and reporting of stock movement.
